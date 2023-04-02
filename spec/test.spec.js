@@ -1,49 +1,52 @@
+describe("Math Suite", function () {
+  function add(a, b) {
+    return a + b;
+  }
 
-describe('Math Suite', function() {
+  // beforeEach(function() {
+  //     console.log('BeforeEach')
+  // })
 
-    function add(a, b) {
-        return a+b
-    }
+  // beforeAll(function() {
+  //     console.log('BeforeAll')
+  // })
 
-    // beforeEach(function() {
-    //     console.log('BeforeEach')
-    // })
+  // afterEach(function() {
+  //     console.log('AfterEach')
+  // })
 
-    // beforeAll(function() {
-    //     console.log('BeforeAll')
-    // })
+  // afterAll(function() {
+  //     console.log('AfterAll')
+  // })
 
-    // afterEach(function() {
-    //     console.log('AfterEach')
-    // })
+  it("should add two numbers correctly", () => {
+    var result = 2;
 
-    // afterAll(function() {
-    //     console.log('AfterAll')
-    // })
+    expect(add(1, 1)).toEqual(result);
+  });
 
-    it('should add two numbers correctly', () => {
-        var result = 2;
+  it("should add two numbers correctly again", () => {
+    var result = 2;
 
-        expect(add(1,1)).toEqual(result);
-    });
+    expect(add(1, 2))
+      .withContext("Values were expected to be equal")
+      .toEqual(result);
+  });
 
-    it('should add two numbers correctly again', () => {
-        var result = 2;
+  it("should add two numbers correctly again again", () => {
+    var result = 2;
 
-        expect(add(1,2)).withContext('Values were expected to be equal').toEqual(result);
-    });
+    expect(add(1, 2))
+      .withContext("Values were expected to be equal")
+      .toEqual(result);
+  });
 
-    it('should add two numbers correctly again again', () => {
-        var result = 2;
+  it("should add two numbers correctly again again again", () => {
+    var result = 2;
+    pending("still developing this one");
 
-        expect(add(1,2)).withContext('Values were expected to be equal').toEqual(result);
-    });
-
-    it('should add two numbers correctly again again again', () => {
-        var result = 2;
-
-        pending('still developing this one')
-
-        expect(add(1,2)).withContext('Values were expected to be equal').toEqual(result);
-    });
-})
+    expect(add(1, 2))
+      .withContext("Values were expected to be equal")
+      .toEqual(result);
+  });
+});
