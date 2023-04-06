@@ -10,5 +10,8 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {},
+  "globals": {
+    "console": true
+  }
 }
