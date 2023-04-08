@@ -7,7 +7,7 @@ describe('Getting Started', () => {
 
   xit('should click something', async () => {});
 
-  it('shoukd test checkboxes', async () => {
+  xit('shoukd test checkboxes', async () => {
     await browser.url('https://the-internet.herokuapp.com');
     const checkboxlink = $('#content > ul > li:nth-child(6) > a');
     const checkbox1 = $('#checkboxes > input[type="checkbox"]:nth-child(1)');
@@ -28,6 +28,18 @@ describe('Getting Started', () => {
     console.log('Checkbox1 after:' + (await checkbox1.getAttribute('checked')));
     console.log('Checkbox2 after:' + (await checkbox2.getAttribute('checked')));
 
+    await browser.pause(3000);
+  });
+
+  it('should test text fields', async () => {
+    await browser.url('https://the-internet.herokuapp.com');
+    const inputlink = $('#content > ul > li:nth-child(27) > a');
+    await inputlink.click();
+
+    const inputField = $('#content > div > div > div > input[type="number"]');
+    await inputField.setValue('12');
+
+    console.log('Input value = ' + (await inputField.getValue()));
     await browser.pause(3000);
   });
 });
