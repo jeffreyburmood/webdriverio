@@ -37,9 +37,15 @@ describe('Getting Started', () => {
     await inputlink.click();
 
     const inputField = $('#content > div > div > div > input[type="number"]');
-    await inputField.setValue('12');
+    await inputField.setValue('123');
 
     console.log('Input value = ' + (await inputField.getValue()));
+    await browser.pause(3000);
+
+    await inputField.addValue('456');
+    await browser.pause(3000);
+
+    await inputField.clearValue();
     await browser.pause(3000);
   });
 });
