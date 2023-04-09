@@ -5,7 +5,8 @@
   "main": "test.js",
   "scripts": {
     "test": "jasmine",
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.js",
+    "wdio-training": "wdio run ./wdio.conf.js --suite training"
   },
   "author": "",
   "license": "ISC",
