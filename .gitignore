@@ -1,1 +1,3 @@
 node_modules/
+wdio-safaridriver.log
+.DS_Store
