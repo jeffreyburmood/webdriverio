@@ -8,7 +8,7 @@ class LoginPage {
   }
 
   get emailField() {
-    return $('#LoginEmail');
+    return $('#loginEmail');
   }
 
   get passwordLabel() {

@@ -12,6 +12,7 @@
   },
   "rules": {},
   "globals": {
-    "console": true
+    "console": true,
+    "require": true
   }
 }
