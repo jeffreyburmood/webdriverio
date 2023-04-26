@@ -30,5 +30,9 @@ class LoginPage {
   get submitButton() {
     return $('#form-login > button');
   }
+
+  get overlay() {
+    return $('#overlay');
+  }
 }
 module.exports = new LoginPage();
