@@ -109,5 +109,8 @@ describe('Login Test Suite', () => {
     // confirm the login credentials have been "remembered"
     await expect(await LoginPage.emailField).toHaveValue('1@2.com');
     await expect(await LoginPage.passwordField).toHaveValue('password');
+
+    // make sure check box is still checked
+    await expect(await LoginPage.rememberLoginCheckbox).toBeSelected();
   });
 });
