@@ -29,7 +29,7 @@ class HeaderPage {
   }
   // modal window selectors
   get modalWolverineWindow() {
-    return $('##wolverineModal');
+    return $('#wolverineModal');
   }
   get modalWolverineTitleText() {
     return $('#wolverineModalLabel');
@@ -47,7 +47,7 @@ class HeaderPage {
     return $('#spidermanModalLabel');
   }
   get modalSpidermanContentText() {
-    return $('##spidermanModal > div > div > div.modal-body');
+    return $('#spidermanModal > div > div > div.modal-body');
   }
   get modalSpidermanCloseButton() {
     return $('#spidermanModal > div > div > div.modal-footer > button');
