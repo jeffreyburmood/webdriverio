@@ -22,5 +22,9 @@ describe('Intro Test Suite', () => {
       'src',
       './images/superhero.png'
     );
+    await expect(await IntroPage.mainImage).toHaveAttribute(
+      'alt',
+      'Superhero Image'
+    );
   });
 });
