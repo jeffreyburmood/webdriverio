@@ -87,4 +87,38 @@ describe('Header Test Suite', () => {
     await HeaderPage.modalSpidermanCloseButton.click();
     expect(await HeaderPage.modalSpidermanWindow).not.toBeDisplayed();
   });
+  it('should search for Wolverine', async () => {
+    await browser.url('');
+
+    await LoginPage.emailField.setValue('1@2.com');
+    await LoginPage.passwordField.setValue('password');
+    await LoginPage.submitButton.click();
+
+    await HeaderPage.navToggle.click();
+
+    await HeaderPage.searchField.setValue('Wolverine');
+    await HeaderPage.searchButton.click();
+
+    expect(await browser.getAlertText()).toContain('Wolverine is awesome!');
+
+    await browser.acceptAlert();
+  });
+  it('should error because did not search for Wolverine', async () => {
+    await browser.url('');
+
+    await LoginPage.emailField.setValue('1@2.com');
+    await LoginPage.passwordField.setValue('password');
+    await LoginPage.submitButton.click();
+
+    await HeaderPage.navToggle.click();
+
+    await HeaderPage.searchField.setValue('NotWolverine');
+    await HeaderPage.searchButton.click();
+
+    expect(await browser.getAlertText()).toContain(
+      'Your search for NotWolverine returned 0 reults. Try something else.'
+    );
+
+    await browser.acceptAlert();
+  });
 });
