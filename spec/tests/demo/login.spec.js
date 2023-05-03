@@ -2,7 +2,7 @@ const LoginPage = require('../../../pages/demo/login.page.js');
 const HeaderPage = require('../../../pages/demo/header.page.js');
 
 describe('Login Test Suite', () => {
-  xit('should display error when password is missing', async () => {
+  it('should display error when password is missing', async () => {
     await browser.url('');
 
     await LoginPage.emailField.setValue('test@test.com');
@@ -14,7 +14,7 @@ describe('Login Test Suite', () => {
 
     await browser.acceptAlert();
   });
-  xit('should display error when email is missing', async () => {
+  it('should display error when email is missing', async () => {
     await browser.url('');
 
     await LoginPage.passwordField.setValue('badpassword');
@@ -26,7 +26,7 @@ describe('Login Test Suite', () => {
 
     await browser.acceptAlert();
   });
-  xit('should display error when email and password are missing', async () => {
+  it('should display error when email and password are missing', async () => {
     await browser.url('');
 
     await LoginPage.submitButton.click();
@@ -37,7 +37,7 @@ describe('Login Test Suite', () => {
 
     await browser.acceptAlert();
   });
-  xit('should display error when email is incorrect', async () => {
+  it('should display error when email is incorrect', async () => {
     await browser.url('');
 
     await LoginPage.emailField.setValue('test@test.com');
@@ -50,7 +50,7 @@ describe('Login Test Suite', () => {
 
     await browser.acceptAlert();
   });
-  xit('should display error when password is incorrect', async () => {
+  it('should display error when password is incorrect', async () => {
     await browser.url('');
 
     await LoginPage.emailField.setValue('1@2.com');
@@ -63,7 +63,7 @@ describe('Login Test Suite', () => {
 
     await browser.acceptAlert();
   });
-  xit('should display error when password case is incorrect', async () => {
+  it('should display error when password case is incorrect', async () => {
     await browser.url('');
 
     await LoginPage.emailField.setValue('1@2.com.com');
@@ -76,7 +76,7 @@ describe('Login Test Suite', () => {
 
     await browser.acceptAlert();
   });
-  xit('should login with valid email and password', async () => {
+  it('should login with valid email and password', async () => {
     await browser.url('');
 
     await LoginPage.emailField.setValue('1@2.com');
@@ -86,7 +86,7 @@ describe('Login Test Suite', () => {
     expect(await LoginPage.overlay).not.toBeDisplayed();
   });
 
-  xit('should remember login', async () => {
+  it('should remember login', async () => {
     await browser.url('');
 
     await LoginPage.emailField.setValue('1@2.com');
