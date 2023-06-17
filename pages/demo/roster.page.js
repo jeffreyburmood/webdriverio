@@ -21,6 +21,9 @@ class RosterPage {
   get thorItem() {
     return $('#hero-list > li:nth-child(4)');
   }
+  get rosterItems() {
+    return $$('#hero-list > li');
+  }
   get addHeroLabel() {
     return $('#addHero-form > div > label');
   }
