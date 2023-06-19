@@ -28,7 +28,9 @@ describe('Roster Test Suite', () => {
     await expect(await RosterPage.thorItem).toHaveText('Thor');
     await expect(await RosterPage.spidermanItem).toHaveText('Spider-Man');
     await expect(await RosterPage.addHeroLabel).toHaveText('ADD A SUPERHERO');
-    console.log(await RosterPage.addHeroField);
-    //await expect(await RosterPage.addHeroField).toHaveText('Enter Hero');
+    await expect(await RosterPage.addHeroField).toHaveAttribute(
+      'placeholder',
+      'Enter Hero'
+    );
   });
 });
