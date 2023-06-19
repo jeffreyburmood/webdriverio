@@ -14,4 +14,18 @@ describe('Dymanic roster suite', () => {
 
     await expect(await RosterPage.rosterItems[5]).toHaveText('Capt Marvel');
   });
+
+  it('should have a default list of heros', async () => {
+    const heros = ['Wolverine', 'Iron Man', 'Deadpool', 'Thor', 'Spider-Man'];
+
+    await browser.url('');
+
+    await LoginPage.emailField.setValue('1@2.com');
+    await LoginPage.passwordField.setValue('password');
+    await LoginPage.submitButton.click();
+
+    for (let i = 0; i < heros.length; i++) {
+      await expect(await RosterPage.rosterItems[i]).toHaveText(heros[i]);
+    }
+  });
 });
